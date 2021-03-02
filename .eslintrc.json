@@ -19,6 +19,8 @@
         "react"
     ],
     "rules": {
-        "semi": ["error", "never"]
+        "semi": ["error", "never"],
+        "import/prefer-default-export": "off",
+        "func-names": "off"
     }
 }
