@@ -4,6 +4,7 @@
   "description": "Template for repositories of pro course students",
   "author": "Aleh <olipskiy777@gmail.com>",
   "license": "MIT",
+  "type": "module",
   "scripts": {
     "lint": "eslint '**/*.{js,jsx}'",
     "lint:fix": "eslint '**/*.{js,jsx}' --fix",
