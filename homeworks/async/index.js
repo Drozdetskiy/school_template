@@ -33,16 +33,19 @@ function renderData(data) {
 }
 
 async function getWeather(city, country) {
+  clearData()
+
   const url = new URL(WEATHER_URL)
   const query = [city, country].filter((el) => el).join(',')
 
   url.search = new URLSearchParams({ access_key: ACCESS_KEY, query })
 
-  const rawData = await fetch(url)
-  const data = await rawData.json()
+  const response = await fetch(url)
 
-  clearData()
-  renderData(data.current)
+  if (response.status === 200) {
+    const data = await response.json()
+    renderData(data.current)
+  }
 }
 
 function submitForm(e) {
